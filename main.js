@@ -64,7 +64,7 @@ setInterval(() => {
 
 	console.log("\nStats:")
 	console.table(stats);
-	console.log("Success rate:", Math.round((stats.correctAnswers / stats.iterations) * 100), "%");
+	console.log("Success rate:", (Math.round((stats.correctAnswers / stats.iterations) * 100) + "%").bgGreen.black);
 }, 100);
 
 
