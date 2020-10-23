@@ -2,6 +2,9 @@ const { For, DisplayResults, AreSameArrays, Clear } = require("./toolbox");
 const { Neuron, Layer, Network } = require("./network");
 require("colors");
 
+const display = require("./display");
+
+
 Clear();
 
 const network = new Network({ layers: [4, 6, 6, 2], learningRate: 1, momentum: 0.1 });
@@ -66,8 +69,6 @@ setInterval(() => {
 	console.table(stats);
 	console.log("Success rate:", (Math.round((stats.correctAnswers / stats.iterations) * 100) + "%").bgGreen.black);
 }, 100);
-
-
 
 results = trainingData.map(data => {
 	network.activate(data.input);
