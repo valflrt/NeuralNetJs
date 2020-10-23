@@ -2,9 +2,6 @@ const { For, DisplayResults, AreSameArrays, Clear } = require("./toolbox");
 const { Neuron, Layer, Network } = require("./network");
 require("colors");
 
-const display = require("./display");
-
-
 Clear();
 
 const network = new Network({ layers: [4, 6, 6, 2], learningRate: 1, momentum: 0.1 });
@@ -38,9 +35,9 @@ const trainingData = [
 ];
 
 let stats = {
-	correctAnswers: 0,
-	wrongAnswers: 0,
-	iterations: 0
+	correctAnswers: { total: 0, consecutive: 0 },
+	wrongAnswers: { total: 0, consecutive: 0 },
+	iterations: { total: 0 }
 };
 
 setInterval(() => {
@@ -57,17 +54,23 @@ setInterval(() => {
 
 	if (roundedOutputs.join("") === trainingItem.output.join("")) {
 		console.log("Answer:", "Correct".bgGreen.black);
-		stats.correctAnswers++;
+		stats.correctAnswers.total++;
+		stats.correctAnswers.consecutive++;
+
+		stats.wrongAnswers.consecutive = 0;
 	} else {
 		console.log("Answer:", "Wrong".bgRed.black);
-		stats.wrongAnswers++;
+		stats.wrongAnswers.total++;
+		stats.wrongAnswers.consecutive++;
+
+		stats.correctAnswers.consecutive = 0;
 	};
 
-	stats.iterations++;
+	stats.iterations.total++;
 
 	console.log("\nStats:")
 	console.table(stats);
-	console.log("Success rate:", (Math.round((stats.correctAnswers / stats.iterations) * 100) + "%").bgGreen.black);
+	console.log("Success rate:", (Math.round((stats.correctAnswers.total / stats.iterations.total) * 100) + "%").bgGreen.black);
 }, 100);
 
 results = trainingData.map(data => {
