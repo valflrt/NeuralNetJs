@@ -45,6 +45,7 @@ setInterval(() => {
 	const trainingItem = trainingData[Math.floor((Math.random() * trainingData.length))];
 	let outputs = network.train(trainingItem.input, trainingItem.output);
 	console.log("Learning...".bgCyan.black, "\n");
+	console.log("Training item:")
 	console.table(trainingItem);
 
 	roundedOutputs = outputs.map((output) => {
@@ -63,7 +64,10 @@ setInterval(() => {
 
 	console.log("\nStats:")
 	console.table(stats);
+	console.log("Success rate:", Math.round((stats.correctAnswers / stats.iterations) * 100), "%");
 }, 100);
+
+
 
 results = trainingData.map(data => {
 	network.activate(data.input);
