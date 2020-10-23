@@ -1,6 +1,6 @@
 const { For, DisplayResults, AreSameArrays, Clear } = require("./toolbox");
 const { Neuron, Layer, Network } = require("./network");
-require("colors");
+require("./colors");
 
 Clear();
 
