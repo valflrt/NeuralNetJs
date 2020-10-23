@@ -84,4 +84,3 @@ results = trainingData.map(data => {
 		isTheCorrectAnswer: AreSameArrays(roundedResult, data.output)
 	};
 });
-
