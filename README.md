@@ -16,12 +16,18 @@ Then, install the dependencies using:
 ```Shell
 npm install
 ```
-*If you don't have npm install take a look at [this site](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+> *If you don't have npm installed on your computer, take a look at [this site](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+
+
+## Starting
 
 You can now start the network's learning:
 ```Shell
 npm start
 ```
+
+
+## Output
 
 Here is a preview of the output:
 ```
