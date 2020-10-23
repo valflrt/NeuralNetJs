@@ -22,7 +22,6 @@ npm start
 
 Here is a preview of the output:
 ```
-
 Learning... 
 
 Training item:
@@ -43,5 +42,4 @@ Stats:
 │   iterations   │  194  │             │
 └────────────────┴───────┴─────────────┘
 Success rate: 47%
-
 ```
