@@ -22,24 +22,26 @@ npm start
 
 Here is a preview of the output:
 ```
+
 Learning... 
 
 Training item:
 ┌─────────┬───┬───┬───┬───┐
 │ (index) │ 0 │ 1 │ 2 │ 3 │
 ├─────────┼───┼───┼───┼───┤
-│  input  │ 0 │ 0 │ 0 │ 0 │
-│ output  │ 0 │ 0 │   │   │
+│  input  │ 0 │ 1 │ 0 │ 1 │
+│ output  │ 1 │ 1 │   │   │
 └─────────┴───┴───┴───┴───┘
-Answer: Wrong
+Answer: Correct
 
 Stats:
-┌────────────────┬────────┐
-│    (index)     │ Values │
-├────────────────┼────────┤
-│ correctAnswers │  120   │
-│  wrongAnswers  │  157   │
-│   iterations   │  277   │
-└────────────────┴────────┘
-Success rate: 43 %
+┌────────────────┬───────┬─────────────┐
+│    (index)     │ total │ consecutive │
+├────────────────┼───────┼─────────────┤
+│ correctAnswers │  91   │      3      │
+│  wrongAnswers  │  103  │      0      │
+│   iterations   │  194  │             │
+└────────────────┴───────┴─────────────┘
+Success rate: 47%
+
 ```
