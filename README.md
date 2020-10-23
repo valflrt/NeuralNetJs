@@ -13,7 +13,7 @@ Then, install the dependencies using:
 ```
 npm install
 ```
-*If you don't have npm install take a look [here](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+*If you don't have npm install take a look at [this site](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
 
 You can now start the network's learning:
 ```
