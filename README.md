@@ -19,3 +19,27 @@ You can now start the network's learning:
 ```
 npm start
 ```
+
+Here is a preview of the output:
+```
+Learning... 
+
+Training item:
+┌─────────┬───┬───┬───┬───┐
+│ (index) │ 0 │ 1 │ 2 │ 3 │
+├─────────┼───┼───┼───┼───┤
+│  input  │ 0 │ 0 │ 0 │ 0 │
+│ output  │ 0 │ 0 │   │   │
+└─────────┴───┴───┴───┴───┘
+Answer: Wrong
+
+Stats:
+┌────────────────┬────────┐
+│    (index)     │ Values │
+├────────────────┼────────┤
+│ correctAnswers │  120   │
+│  wrongAnswers  │  157   │
+│   iterations   │  277   │
+└────────────────┴────────┘
+Success rate: 43.32129963898917 %
+```
