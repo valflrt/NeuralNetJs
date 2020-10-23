@@ -1,6 +1,8 @@
 const id = require("./id");
 const toolbox = require("./toolbox");
 
+// neuron constructor
+
 class Neuron {
 	constructor() {
 		this.id = id();
@@ -53,6 +55,8 @@ class Neuron {
 	};
 };
 
+// layer constructor
+
 class Layer {
 	constructor(amountOfNeurons) {
 		this.neurons = this.createNeuron(amountOfNeurons);
@@ -69,6 +73,8 @@ class Layer {
 	};
 };
 
+// neuron constructor
+
 class Network {
 	constructor(args) {
 		this.layers = new Array();
@@ -78,7 +84,7 @@ class Network {
 		this.learningRate = args.learningRate || new Number(0.3);
 		this.momentum = args.momentum || new Number(0.1);
 
-		this.iterations = args.iterations || new Number(1000);
+		this.iterations = 0;
 	};
 
 	setParams(args) {
@@ -130,6 +136,8 @@ class Network {
 		return results;
 	};
 
+	// set output values for input neurons
+
 	activate(values) {
 		this.layers[0].neurons.forEach((neuron, index) => {
 			neuron.setOutput(values[index]);
@@ -139,6 +147,8 @@ class Network {
 	run() {
 		return this.inputSigmoid();
 	};
+
+	// applying the sigmoid formula to all neuron inputs
 
 	inputSigmoid() {
 		for (var layer = 1; layer < this.layers.length; layer++) {
@@ -163,7 +173,12 @@ class Network {
 		return outputs;
 	};
 
+	// calculate the needed change for adjusting the weight of the connections
+
 	calcDeltasSigmoid(targetValue) {
+
+		// "layer--" -> from the last layer to the first
+
 		for (let layer = this.layers.length - 1; layer >= 0; layer--) {
 			const currentLayer = this.layers[layer];
 
@@ -187,6 +202,8 @@ class Network {
 			};
 		};
 	};
+
+	// adjusting the weights of the connections
 
 	adjustWeights() {
 		for (let layer = 1; layer <= this.layers.length - 1; layer++) {
@@ -213,6 +230,8 @@ class Network {
 	};
 };
 
+// connection constructor
+
 class Connection {
 	constructor(from, to) {
 		this.from = from;
@@ -229,6 +248,8 @@ class Connection {
 		this.change = change;
 	};
 };
+
+// module exporting
 
 module.exports.Neuron = Neuron;
 module.exports.Layer = Layer;

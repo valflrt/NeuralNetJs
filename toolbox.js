@@ -42,11 +42,9 @@ module.exports.Clear = () => {
 	console.log("\033c");
 };
 
-module.exports.For = (iterations, callback, timeout = 0) => {
-	let index;
-	for (index = 0; index < iterations; index++) {
-		setTimeout(() => {
-			callback(index);
-		}, timeout);
+module.exports.Loop = (iterations, callback) => {
+	let index = 0;
+	while (index < iterations) {
+		callback(index);
 	};
 };
