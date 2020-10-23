@@ -41,5 +41,5 @@ Stats:
 │  wrongAnswers  │  157   │
 │   iterations   │  277   │
 └────────────────┴────────┘
-Success rate: 43.32129963898917 %
+Success rate: 43 %
 ```
