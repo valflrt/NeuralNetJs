@@ -1,22 +1,25 @@
 # NeuralNetJs
 
-This is a simple neural network constructor.
+NeuralNetJs is a simple artificial neural network.
+
+In [network.js](./network.js), there is the constructors (classes) for building neurons, layers, connections and networks.
+In [main.js](./main.js), you can find a display example of the results of the network.
 
 ## Installation
 
 First, clone this repository:
-```
+```Shell
 git clone https://github.com/valflrt/NeuralNetJs.git
 ```
 
 Then, install the dependencies using:
-```
+```Shell
 npm install
 ```
 *If you don't have npm install take a look at [this site](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
 
 You can now start the network's learning:
-```
+```Shell
 npm start
 ```
 
