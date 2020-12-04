@@ -2,9 +2,7 @@
 
 NeuralNetJs is a simple artificial neural network.
 
-In [network.js](./network.js), there is the constructors (classes) for building neurons, layers, connections and networks.
-
-In [main.js](./main.js), you can find a display example of the results of the network.
+You can find a code example in [main.js](./main.js).
 
 ## Installation
 
